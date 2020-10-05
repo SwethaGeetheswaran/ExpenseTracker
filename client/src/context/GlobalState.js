@@ -8,7 +8,7 @@ const initialState = {
   loading: true,
 };
 
-export const globalContext = createContext(initialState);
+export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
@@ -72,7 +72,7 @@ export const GlobalProvider = ({ children }) => {
   }
 
   return (
-    <globalContext.Provider
+    <GlobalContext.Provider
       value={{
         transactions: state.transactions,
         error: state.error,
@@ -83,6 +83,6 @@ export const GlobalProvider = ({ children }) => {
       }}
     >
       {children}
-    </globalContext.Provider>
+    </GlobalContext.Provider>
   );
 };

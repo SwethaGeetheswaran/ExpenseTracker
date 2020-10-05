@@ -8,7 +8,7 @@ dotenv.config({ path: "./config/config.env" });
 
 connectDB();
 const transaction = require("./routes/transaction");
-const { connect } = require("http2");
+//const { connect } = require("http2");
 const app = express();
 
 // Body parser
